@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LicitaÁgil | Alertas de Mercado Público por WhatsApp | By We Are Samod</title>
+    <meta name="description" content="No pierdas más contratos públicos. Recibe alertas instantáneas de licitaciones y Compra Ágil de ChileCompra directamente en tu WhatsApp filtradas por tu rubro. Un producto de We Are Samod.">
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Glows (Matching We Are Samod violet/blue gradients) -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Header / Nav (Aligned with We Are Samod branding) -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.svg" alt="LicitaÁgil Logo" class="logo-icon">
+            <span class="logo-text">
+                <span class="samod-brand-text">LicitaÁgil</span> 
+                <span class="subbrand-text"> by Samod</span>
+            </span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Gana licitaciones en Chile antes que tu competencia, directo en tu <span class="whatsapp-text">WhatsApp</span></h1>
+            <p class="hero-subtitle">
+                Filtramos miles de publicaciones de <strong>Mercado Público</strong> en tiempo real y te enviamos alertas inmediatas de <strong>Compra Ágil</strong> e invitaciones filtradas exclusivamente para tu Pyme.
+            </p>
+            <ul class="benefit-list">
+                <li><span class="check-icon">✓</span> <strong>Especial para Compra Ágil:</strong> Postula antes del cierre en 24 horas.</li>
+                <li><span class="check-icon">✓</span> <strong>Sin Ruido:</strong> Recibe alertas solo del rubro de tu negocio.</li>
+                <li><span class="check-icon">✓</span> <strong>Inmediatez Total:</strong> Directo en tu chat, sin revisar plataformas lentas.</li>
+            </ul>
+
+            <div class="trust-pill">
+                <span class="trust-text">Únete a la preventa exclusiva para Pymes y Autónomos</span>
+            </div>
+        </div>
+
+        <!-- Interactive Phone / WhatsApp Demo -->
+        <div class="hero-demo">
+            <div class="phone-wrapper">
+                <div class="phone-header">
+                    <div class="phone-camera"></div>
+                    <div class="phone-user">
+                        <div class="user-avatar">🤖</div>
+                        <div class="user-info">
+                            <span class="user-name">LicitaÁgil Bot 🤖</span>
+                            <span class="user-status">En línea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-chat" id="chat-container">
+                    <!-- Dynamic Messages load here -->
+                </div>
+                <div class="phone-input">
+                    <div class="input-placeholder">Escribe una respuesta...</div>
+                    <div class="send-btn">🟢</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Form & Lead Capture Section -->
+    <section class="form-section" id="register-section">
+        <div class="card form-card">
+            <h2 class="section-title">Asegura tu cupo en la lista de espera</h2>
+            <p class="section-description">
+                Lanzamos en pocos días. Regístrate hoy y obtén <strong>7 días de prueba gratis</strong> y un <strong>50% de descuento vitalicio</strong> en tu suscripción al lanzar.
+            </p>
+
+            <form id="lead-form" class="lead-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Tu Nombre</label>
+                        <input type="text" id="name" required placeholder="Ej: Carlos Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp (Chile)</label>
+                        <input type="tel" id="whatsapp" required placeholder="Ej: +56 9 1234 5678">
+                        <small class="input-help">Te enviaremos las alertas de prueba a este número.</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Nombre de tu Pyme (Opcional)</label>
+                        <input type="text" id="company" placeholder="Ej: Servicios de Climatización SpA">
+                    </div>
+                    <div class="form-group">
+                        <label for="keywords">¿Qué vende tu empresa? (Palabras clave)</label>
+                        <input type="text" id="keywords" required placeholder="Ej: aire acondicionado, mantención eléctrica, catering">
+                        <small class="input-help">Separadas por comas. Usaremos esto para filtrar tus ofertas.</small>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-button">
+                    <span>Quiero mi Acceso Anticipado (50% Off)</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+
+            <div id="success-message" class="success-message hidden">
+                <div class="success-icon">✓</div>
+                <h3>¡Felicidades, te has registrado con éxito!</h3>
+                <p>Hemos configurado tus filtros. Eres el número <strong id="queue-number">#14</strong> en la lista de espera de tu rubro.</p>
+                <p class="success-highlight">Te enviaremos una alerta demo de ChileCompra a tu WhatsApp cuando abramos accesos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section Preview -->
+    <section class="pricing-preview">
+        <h2 class="pricing-title">Un plan simple, creado para Pymes chilenas</h2>
+        <div class="pricing-cards">
+            <div class="card pricing-card active-plan">
+                <div class="pricing-badge">PROMO LANZAMIENTO</div>
+                <h3>Plan Pyme Alertas</h3>
+                <div class="price">
+                    <span class="original-price">$24.990</span>
+                    <span class="actual-price">$12.490</span>
+                    <span class="period">/mes CLP</span>
+                </div>
+                <p class="price-notice">Precio especial con 50% de descuento vitalicio para registros de preventa.</p>
+                <ul class="price-features">
+                    <li>✓ Alertas instantáneas en WhatsApp 24/7</li>
+                    <li>✓ Hasta 10 palabras clave personalizadas</li>
+                    <li>✓ Filtro exclusivo de "Compra Ágil" (Corto Plazo)</li>
+                    <li>✓ Soporte directo para postulación</li>
+                    <li>✓ Sin contratos de permanencia</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            we are <span class="samod-brand">samod</span><span class="logo-dot"></span>
+        </div>
+        <p>&copy; 2026 We Are Samod. Todos los derechos reservados.</p>
+        <p class="disclaimer">Este es un servicio de alerta independiente desarrollado por We Are Samod y no posee vinculación oficial directa con ChileCompra ni Mercado Público.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
