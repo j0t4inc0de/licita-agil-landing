@@ -682,6 +682,16 @@ body {
     margin-bottom: 0.25rem;
 }
 
+.footer-logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.footer-logo-link:hover {
+    opacity: 0.8;
+}
+
 .disclaimer {
     font-size: 0.75rem;
     opacity: 0.6;

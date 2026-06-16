@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('licita_agil_leads', JSON.stringify(leads));
 
         // Send lead to backend reverse-proxied to n8n without exposing its internal URL
-        fetch('/api/leads', {
+        fetch('/webhook/licita-agil-leads', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
