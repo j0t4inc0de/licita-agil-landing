@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save back to localStorage
         localStorage.setItem('licita_agil_leads', JSON.stringify(leads));
 
-        // Send lead to backend reverse-proxied to n8n without exposing its internal URL
-        fetch('https://api-licita.wearesamod.com/webhook/licita-agil-leads', {
+        // Send lead directly to public n8n endpoint to bypass Cloudflare Tunnel DNS propagation issues
+        fetch('https://n8n.wearesamod.com/webhook/licita-agil-leads', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
