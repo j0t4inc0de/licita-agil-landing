@@ -226,52 +226,72 @@ body {
     width: 320px;
     height: 520px;
     background: #000;
-    border: 10px solid #141724;
-    border-radius: 36px;
-    box-shadow: var(--card-shadow), var(--neon-shadow-primary);
+    border: 10px solid #1e2230;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
 }
 
-.phone-header {
-    background: #0d1222; /* Sleek dark bar */
-    border-bottom: 1px solid var(--surface-border);
-    padding: 2.2rem 1rem 0.8rem 1rem;
+/* Phone Top Status Bar */
+.phone-status-bar {
+    background: #1f2c34;
+    height: 24px;
+    padding: 0 16px;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #e9edef;
+    font-size: 0.65rem;
+    font-weight: 500;
+    user-select: none;
+    border-bottom: none;
+}
+
+.status-icons {
+    display: flex;
+    gap: 4px;
+    font-size: 0.6rem;
+}
+
+/* WhatsApp Style Header */
+.phone-header {
+    background: #1f2c34; /* WhatsApp dark mode header background */
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e9edef;
     position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
-.phone-camera {
-    width: 60px;
-    height: 15px;
-    background: #000;
-    border-radius: 10px;
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.phone-user {
+.header-left {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 6px;
+}
+
+.back-arrow {
+    font-size: 1rem;
+    color: #e9edef;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .user-avatar {
-    width: 32px;
-    height: 32px;
-    background: var(--primary-color);
-    color: #454141;
+    width: 34px;
+    height: 34px;
+    background: #00a884; /* WhatsApp Green */
+    color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .user-info {
@@ -282,97 +302,175 @@ body {
 .user-name {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #fff;
+    color: #e9edef;
 }
 
 .user-status {
     font-size: 0.65rem;
-    color: var(--text-muted);
+    color: #8696a0;
 }
 
+.header-icons {
+    display: flex;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: #e9edef;
+    cursor: pointer;
+}
+
+.header-icon-btn {
+    opacity: 0.95;
+    transition: opacity 0.2s;
+}
+
+.header-icon-btn:hover {
+    opacity: 1;
+}
+
+/* WhatsApp Dark Mode Chat Area */
 .phone-chat {
     flex: 1;
-    background: #080b13; /* Cyber Chat Grid BG */
-    padding: 1rem;
+    background-color: #0b141a; /* WhatsApp dark mode chat background */
+    padding: 12px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 10px;
     scroll-behavior: smooth;
-    background-image: radial-gradient(rgba(255,255,255,0.015) 1px, transparent 0);
-    background-size: 12px 12px;
+    /* Clean WhatsApp doodle-like background effect using CSS */
+    background-image: radial-gradient(#1f2c34 0.5px, transparent 0.5px), radial-gradient(#1f2c34 0.5px, #0b141a 0.5px);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    opacity: 0.98;
 }
 
-/* Chat Bubbles (Cyber/Dark themed) */
+/* Chat Bubbles (WhatsApp style) */
 .bubble {
-    max-width: 85%;
-    padding: 0.65rem 0.85rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    line-height: 1.45;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    animation: popBubble 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    max-width: 82%;
+    padding: 8px 10px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+    position: relative;
+    font-family: 'Inter', sans-serif;
 }
 
 .bubble.bot {
-    background: rgba(20, 26, 42, 0.8);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: #202c33; /* WhatsApp dark received bubble */
+    color: #e9edef;
     align-self: flex-start;
-    color: var(--text-main);
-    border-top-left-radius: 0;
+    border-radius: 0 8px 8px 8px;
 }
 
 .bubble.user {
-    background: rgba(139, 92, 246, 0.2);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: #005c4b; /* WhatsApp dark sent bubble */
+    color: #e9edef;
     align-self: flex-end;
-    color: var(--text-main);
-    border-top-right-radius: 0;
+    border-radius: 8px 0 8px 8px;
 }
 
+/* Dynamic simulation pop animation */
+@keyframes popBubble {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.bubble {
+    animation: popBubble 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+/* Link elements in WhatsApp bubble */
 .bubble-link {
     display: inline-block;
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: var(--secondary-color);
-    padding: 0.25rem 0.6rem;
+    background: rgba(83, 189, 235, 0.1);
+    border: 1px solid rgba(83, 189, 235, 0.2);
+    color: #53bdeb; /* WhatsApp blue link */
+    padding: 4px 10px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    margin-top: 0.4rem;
-    transition: all 0.2s ease;
+    margin-top: 6px;
+    font-size: 0.68rem;
+    transition: background 0.2s ease;
 }
 
 .bubble-link:hover {
-    background: rgba(16, 185, 129, 0.25);
-    box-shadow: var(--neon-shadow-secondary);
+    background: rgba(83, 189, 235, 0.2);
 }
 
 .bubble-time {
     display: block;
     text-align: right;
-    font-size: 0.55rem;
-    color: var(--text-muted);
-    margin-top: 0.3rem;
+    font-size: 0.52rem;
+    color: #8696a0;
+    margin-top: 4px;
 }
 
-.phone-input {
-    background: #0d1222;
-    padding: 0.75rem;
+/* WhatsApp Style Footer Input Bar */
+.phone-input-bar {
+    background: #0b141a;
+    padding: 8px 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--surface-border);
+    gap: 8px;
+    z-index: 10;
+}
+
+.input-pill {
+    flex: 1;
+    background: #202c33;
+    border-radius: 24px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8696a0;
+}
+
+.input-icon {
+    font-size: 0.95rem;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.input-icon:hover {
+    opacity: 1;
 }
 
 .input-placeholder {
-    font-size: 0.75rem;
-    color: var(--text-muted);
+    flex: 1;
+    font-size: 0.78rem;
+    color: #8696a0;
+    user-select: none;
 }
 
-.send-btn {
-    font-size: 0.9rem;
+.mic-send-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #00a884; /* WhatsApp action green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.mic-send-circle:hover {
+    transform: scale(1.05);
+}
+
+.send-icon {
+    width: 14px;
+    height: 14px;
+    transform: rotate(0deg);
 }
 
 /* Form Section */

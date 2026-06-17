@@ -115,4 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Nuevo lead registrado en LocalStorage:', newLead);
     });
+
+    // 3. Status Bar Clock Update
+    const statusTimeSpan = document.getElementById('status-time');
+    if (statusTimeSpan) {
+        const updateClock = () => {
+            const now = new Date();
+            statusTimeSpan.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        };
+        updateClock();
+        setInterval(updateClock, 60000);
+    }
 });

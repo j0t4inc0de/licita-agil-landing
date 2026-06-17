@@ -49,22 +49,46 @@
         <!-- Interactive Phone / WhatsApp Demo -->
         <div class="hero-demo">
             <div class="phone-wrapper">
+                <!-- Phone Top Bar status icons -->
+                <div class="phone-status-bar">
+                    <span class="status-time" id="status-time">09:41</span>
+                    <div class="status-icons">
+                        <span class="status-signal">📶</span>
+                        <span class="status-wifi">📶</span>
+                        <span class="status-battery">🔋</span>
+                    </div>
+                </div>
+                
                 <div class="phone-header">
-                    <div class="phone-camera"></div>
-                    <div class="phone-user">
+                    <div class="header-left">
+                        <span class="back-arrow">←</span>
                         <div class="user-avatar">🤖</div>
                         <div class="user-info">
-                            <span class="user-name">LicitaÁgil Bot 🤖</span>
-                            <span class="user-status">En línea</span>
+                            <span class="user-name">LicitaÁgil Bot</span>
+                            <span class="user-status">en línea</span>
                         </div>
+                    </div>
+                    <div class="header-icons">
+                        <span class="header-icon-btn">🎥</span>
+                        <span class="header-icon-btn">📞</span>
+                        <span class="header-icon-btn">⋮</span>
                     </div>
                 </div>
                 <div class="phone-chat" id="chat-container">
                     <!-- Dynamic Messages load here -->
                 </div>
-                <div class="phone-input">
-                    <div class="input-placeholder">Escribe una respuesta...</div>
-                    <div class="send-btn">🟢</div>
+                <div class="phone-input-bar">
+                    <div class="input-pill">
+                        <span class="input-icon">😀</span>
+                        <div class="input-placeholder">Mensaje</div>
+                        <span class="input-icon">📎</span>
+                        <span class="input-icon">📷</span>
+                    </div>
+                    <div class="mic-send-circle">
+                        <svg class="send-icon" viewBox="0 0 24 24" width="16" height="16">
+                            <path fill="#ffffff" d="M2 21v-7l11-2-11-2V3l18.84 9L2 21z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
