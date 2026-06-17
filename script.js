@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatContainer = document.getElementById('chat-container');
     
     const chatSequence = [
-        { sender: 'bot', text: '¡Hola Carlos! 🤖 Aquí tienes las nuevas oportunidades en <strong>Compra Ágil</strong> de hoy para tu rubro:', delay: 1000 },
-        { sender: 'bot', text: '📂 <strong>Filtro: Soporte TI & Redes</strong><br>💼 <strong>Licitación:</strong> Mantención de Computadores y Puntos de Red<br>🏢 <strong>Organismo:</strong> Municipalidad de Providencia<br>💰 <strong>Monto Estimado:</strong> $4.500.000 CLP<br>⏰ <strong>Cierre:</strong> Mañana a las 15:00 (Faltan 19 horas).<br><a href="#" class="bubble-link" onclick="event.preventDefault();">Ver Ficha Oficial</a>', delay: 2000 },
-        { sender: 'user', text: '¡Excelente! ¿Puedes recordarme 2 horas antes de que cierre para subir mi oferta?', delay: 2000 },
-        { sender: 'bot', text: '¡Programado! ⏰ Te enviaré un WhatsApp mañana a las 13:00 con el enlace directo y los documentos mínimos para postular.', delay: 1500 }
+        { sender: 'bot', text: '¡Hola Carlos! 🤖 Nueva <strong>Compra Ágil</strong> detectada para tu rubro:', delay: 1000 },
+        { sender: 'bot', text: '📂 <strong>Filtro: Climatización y HVAC</strong><br>💼 <strong>Licitación:</strong> Mantención Aire Acondicionado Edificio Consistorial<br>🏢 <strong>Organismo:</strong> Municipalidad de Santiago<br>💰 <strong>Presupuesto Máx:</strong> $3.500.000 CLP<br>⏰ <strong>Cierre:</strong> Hoy a las 18:00 (Quedan 5 horas).<br><a href="#" class="bubble-link" onclick="event.preventDefault();">Ver bases oficiales</a>', delay: 2000 },
+        { sender: 'user', text: 'Cotizar', delay: 2000 },
+        { sender: 'bot', text: 'Analizando las bases técnicas y tu catálogo histórico... ⚙️', delay: 1500 },
+        { sender: 'bot', text: '¡Propuesta lista! 📄 He generado tu <strong>Cotización Técnica</strong> y la <strong>Declaración Obligatoria</strong> en formato PDF, optimizados con tus precios base.<br><a href="#" class="bubble-link" onclick="event.preventDefault();">📥 Descargar propuesta.pdf</a>', delay: 2500 },
+        { sender: 'user', text: 'Excelente, la voy a subir de inmediato.', delay: 2000 },
+        { sender: 'bot', text: '¡Perfecto! 🚀 Recuerda que tienes hasta las 18:00. <a href="#" class="bubble-link" onclick="event.preventDefault();">Subir oferta a Mercado Público</a>', delay: 1500 }
     ];
 
     let sequenceIndex = 0;
